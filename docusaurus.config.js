@@ -16,12 +16,12 @@ const config = {
   url: 'https://aftabumair766-lang.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/hack_book/',
+  baseUrl: '/hack-book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'aftabumair766-lang', // Usually your GitHub org/user name.
-  projectName: 'hack_book', // Usually your repo name.
+  projectName: 'hack-book', // Usually your repo name.
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -43,7 +43,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/aftabumair766-lang/hack_book/tree/main/',
+            'https://github.com/aftabumair766-lang/hack-book/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +53,7 @@ const config = {
           },
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/aftabumair766-lang/hack_book/tree/main/',
+            'https://github.com/aftabumair766-lang/hack-book/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -113,7 +113,7 @@ const config = {
             items: [
               {
                 label: 'GitHub Discussions',
-                href: 'https://github.com/aftabumair766-lang/hack_book/discussions',
+                href: 'https://github.com/aftabumair766-lang/hack-book/discussions',
               },
             ],
           },

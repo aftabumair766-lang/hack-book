@@ -161,7 +161,7 @@ To get the most out of this coursebook, you should have:
 
 Ready to begin your journey into Physical AI and Humanoid Robotics?
 
-👉 **Start with [Chapter 1: Foundations of Physical AI](/docs/chapter-01)**
+👉 **Chapter 1 coming soon!** (Will be generated using AI workflow)
 
 ## Contributing
 

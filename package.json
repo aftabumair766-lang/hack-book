@@ -21,7 +21,6 @@
   "keywords": ["physical-ai", "robotics", "humanoid-robots", "embodied-intelligence", "coursebook", "docusaurus"],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",

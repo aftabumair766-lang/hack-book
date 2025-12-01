@@ -1,56 +1,185 @@
+/* Dark Cyberpunk Theme for Landing Page */
+
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #000428 0%, #004e92 100%);
-  color: white;
+  color: #e0e0e0;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Animated circuit background */
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .logoContainer {
   margin: 2rem auto;
   max-width: 800px;
   padding: 0 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .bookCover {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
-  border: 2px solid rgba(0, 255, 255, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.4),
+              0 0 60px rgba(0, 255, 255, 0.2);
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  transition: all 0.4s ease;
+  filter: brightness(1.1);
 }
 
 .bookCover:hover {
-  transform: scale(1.02);
-  box-shadow: 0 12px 48px rgba(0, 255, 255, 0.5);
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 12px 48px rgba(0, 255, 255, 0.6),
+              0 0 80px rgba(0, 255, 255, 0.4);
+  border-color: #00ffff;
+  filter: brightness(1.2);
+}
+
+/* Title styling with robotic font */
+.heroBanner h1 {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+               0 0 40px rgba(0, 255, 255, 0.4);
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Subtitle styling */
+.heroBanner p.hero__subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  color: #66d9ff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  text-shadow: 0 0 10px rgba(102, 217, 255, 0.5);
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* Enhanced button styling */
+.buttons .button {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.8rem 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #00d9ff 0%, #0088ff 100%);
+  border: 2px solid #00ffff;
+  border-radius: 6px;
+  color: #000;
+  box-shadow: 0 4px 20px rgba(0, 217, 255, 0.5),
+              0 0 30px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons .button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.buttons .button:hover {
+  background: linear-gradient(135deg, #00ffff 0%, #00aaff 100%);
+  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.7),
+              0 0 50px rgba(0, 255, 255, 0.5);
+  transform: translateY(-3px);
+  border-color: #66ffff;
+}
+
+.buttons .button:hover::before {
+  left: 100%;
+}
+
+/* Features section */
 .features {
   display: flex;
   align-items: center;
   padding: 4rem 0;
   width: 100%;
+  background: rgba(10, 14, 39, 0.95);
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .features h3 {
+  font-family: 'Orbitron', monospace;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 1rem;
-  color: #00bfff;
+  color: #00ffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.features h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff 0%, transparent 100%);
 }
 
 .features p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #b0d9ff;
+  font-weight: 400;
+}
+
+/* Feature cards */
+.features .col {
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.features .col:hover {
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 8px;
 }
 
 /* Responsive */
@@ -59,7 +188,43 @@
     padding: 2rem;
   }
 
+  .heroBanner h1 {
+    font-size: 1.8rem;
+  }
+
+  .heroBanner p.hero__subtitle {
+    font-size: 1.1rem;
+  }
+
   .bookCover {
     max-width: 90%;
+  }
+
+  .buttons .button {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+  }
+
+  .features h3 {
+    font-size: 1.3rem;
+  }
+
+  .features p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroBanner h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .heroBanner p.hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .features h3 {
+    font-size: 1.2rem;
   }
 }

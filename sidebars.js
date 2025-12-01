@@ -47,6 +47,11 @@ const sidebars = {
       label: 'Chapter 5: Manipulation',
       items: ['chapter-05/chapter-05'],
     },
+    {
+      type: 'category',
+      label: 'Chapter 6: Future Directions',
+      items: ['chapter-06/chapter-06'],
+    },
   ],
 };
 

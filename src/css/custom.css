@@ -1,30 +1,361 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Custom CSS for Physical AI & Humanoid Robotics Coursebook
+ * Dark cyberpunk theme with robotic fonts
  */
 
-/* You can override the default Infima variables here. */
+/* Import robotic/tech fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+/* Root variables - Dark Cyberpunk Theme */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Neon cyan/blue color scheme */
+  --ifm-color-primary: #00d9ff;
+  --ifm-color-primary-dark: #00c2e6;
+  --ifm-color-primary-darker: #00b8d9;
+  --ifm-color-primary-darkest: #0097b3;
+  --ifm-color-primary-light: #1ae0ff;
+  --ifm-color-primary-lighter: #33e5ff;
+  --ifm-color-primary-lightest: #66edff;
+
+  /* Dark backgrounds */
+  --ifm-background-color: #0a0e27;
+  --ifm-navbar-background-color: #000428;
+  --ifm-footer-background-color: #000428;
+
+  /* Text colors */
+  --ifm-font-color-base: #e0e0e0;
+  --ifm-heading-color: #00ffff;
+
+  /* Code */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 217, 255, 0.1);
+
+  /* Fonts */
+  --ifm-font-family-base: 'Rajdhani', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Orbitron', monospace;
+  --ifm-font-family-monospace: 'Share Tech Mono', monospace;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Force dark theme always */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #00d9ff;
+  --ifm-color-primary-dark: #00c2e6;
+  --ifm-color-primary-darker: #00b8d9;
+  --ifm-color-primary-darkest: #0097b3;
+  --ifm-color-primary-light: #1ae0ff;
+  --ifm-color-primary-lighter: #33e5ff;
+  --ifm-color-primary-lightest: #66edff;
+
+  --ifm-background-color: #0a0e27;
+  --ifm-navbar-background-color: #000428;
+  --ifm-footer-background-color: #000428;
+
+  --ifm-font-color-base: #e0e0e0;
+  --ifm-heading-color: #00ffff;
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 217, 255, 0.1);
+}
+
+/* Global dark background */
+html[data-theme='dark'] {
+  --ifm-background-surface-color: #0f1423;
+}
+
+body {
+  font-family: 'Rajdhani', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+  background-attachment: fixed;
+  color: #e0e0e0;
+}
+
+/* Headings with robotic font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', monospace;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #33e5ff;
+}
+
+/* Main content area */
+.main-wrapper {
+  background: rgba(10, 14, 39, 0.95);
+  min-height: 100vh;
+}
+
+article {
+  background: rgba(15, 20, 35, 0.9);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+/* Sidebar styling */
+.menu {
+  background: rgba(0, 4, 40, 0.95);
+  border-right: 2px solid rgba(0, 217, 255, 0.2);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__link,
+.theme-doc-sidebar-item-link-level-1 > .menu__link {
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.menu__link {
+  color: #b0b0b0;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.menu__link:hover {
+  background: rgba(0, 217, 255, 0.1);
+  color: #00ffff;
+  border-left: 3px solid #00ffff;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.menu__link--active {
+  background: rgba(0, 217, 255, 0.15);
+  color: #00ffff;
+  border-left: 3px solid #00ffff;
+  font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #000428 0%, #004e92 100%);
+  box-shadow: 0 2px 8px rgba(0, 217, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.navbar__title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.navbar__item {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.navbar__link {
+  color: #b0d9ff;
+  transition: all 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* Code blocks */
+code {
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+pre {
+  background: rgba(0, 4, 40, 0.8);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 6px;
+}
+
+/* Tables */
+table {
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+table thead tr {
+  background: rgba(0, 217, 255, 0.1);
+  border-bottom: 2px solid rgba(0, 217, 255, 0.5);
+}
+
+table thead th {
+  font-family: 'Orbitron', monospace;
+  color: #00ffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+table tbody tr {
+  border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+table tbody tr:hover {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+/* Admonitions (tips, notes, warnings) */
+.admonition {
+  border-left: 4px solid;
+  background: rgba(0, 217, 255, 0.05);
+  border-radius: 4px;
+}
+
+.admonition-heading h5 {
+  font-family: 'Orbitron', monospace;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.alert--success {
+  border-color: #00ff88;
+}
+
+.alert--info {
+  border-color: #00d9ff;
+}
+
+.alert--warning {
+  border-color: #ffaa00;
+}
+
+.alert--danger {
+  border-color: #ff4444;
+}
+
+/* Links */
+a {
+  color: #00d9ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, #00d9ff 0%, #0088ff 100%);
+  border: 1px solid #00ffff;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4);
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, #00ffff 0%, #00aaff 100%);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, #000428 0%, #004e92 100%);
+  border-top: 2px solid rgba(0, 217, 255, 0.3);
+}
+
+.footer__title {
+  font-family: 'Orbitron', monospace;
+  color: #00ffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0e27;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d9ff 0%, #0088ff 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ffff;
+}
+
+/* Circuit-like decorative lines */
+.markdown h2::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff 0%, transparent 100%);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Glowing effect on hover for chapter links */
+.pagination-nav__link:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  background: rgba(0, 217, 255, 0.05);
+}
+
+/* Responsive font sizing */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  article {
+    padding: 1rem;
+  }
+}
+
+/* Print styles - remove dark background for printing */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+    text-shadow: none;
+  }
 }

@@ -37,7 +37,36 @@ npm install
 npm start
 ```
 
-The site will open at [http://localhost:3000](http://localhost:3000).
+The site will open at [http://localhost:3000/hack_book/](http://localhost:3000/hack_book/).
+
+## 🤖 RAG Chatbot Feature
+
+This coursebook includes an integrated **AI-powered chatbot** using Retrieval-Augmented Generation (RAG):
+
+**Features:**
+- ✅ Answer questions about course content
+- ✅ Selected text queries - highlight text and ask about it
+- ✅ Contextual responses based on actual book content
+- ✅ Source attribution with confidence scores
+- ✅ Cyberpunk-themed UI matching the book design
+
+**Quick Setup:**
+```bash
+cd backend
+cp .env.example .env
+# Add your API keys (OpenAI, Qdrant, Neon)
+pip install -r requirements.txt
+python scripts/ingest_docs.py
+python -m app.main
+```
+
+📖 **Full chatbot setup guide:** [CHATBOT_SETUP.md](CHATBOT_SETUP.md)
+
+**Backend Stack:**
+- FastAPI for REST API
+- OpenAI (embeddings + GPT-4)
+- Qdrant Cloud (vector search)
+- Neon Postgres (metadata + history)
 
 ### Build
 
@@ -66,8 +95,8 @@ Reinforcement learning, imitation learning, transfer learning, and continual lea
 ### Chapter 5: System Integration
 Software architecture, hardware-software integration, real-time systems, and safety.
 
-### Chapter 6: Applications
-Healthcare robotics, industrial applications, service robots, and emerging technologies.
+### Chapter 6: Challenges and Future Directions
+Current technical challenges, research frontiers, ethics, emerging trends, and career opportunities.
 
 ## 🛠️ Development Workflow
 
@@ -126,34 +155,39 @@ All content follows strict academic standards with proper citations and accessib
 
 ```
 hack_book/
-├── .specify/              # Spec-Kit Plus infrastructure
-│   ├── memory/
-│   │   └── constitution.md
-│   ├── templates/         # SDD templates
-│   └── scripts/           # Automation scripts
-├── .claude/               # Claude Code commands
-│   └── commands/
-├── specs/                 # Feature specifications
-│   └── 002-ai-book-workflow/
-│       ├── spec.md
-│       ├── plan.md
-│       ├── tasks.md
-│       ├── research.md
-│       ├── data-model.md
-│       └── contracts/
+├── backend/               # RAG Chatbot Backend (FastAPI)
+│   ├── app/
+│   │   ├── services/     # RAG, ingestion, document processing
+│   │   ├── models/       # Database & API models
+│   │   ├── core/         # Configuration
+│   │   └── main.py       # FastAPI app
+│   ├── scripts/          # Ingestion scripts
+│   ├── requirements.txt  # Python dependencies
+│   └── README.md         # Backend documentation
 ├── docs/                  # Coursebook content (Markdown)
 │   ├── intro.md
-│   ├── chapter-01/
-│   ├── chapter-02/
-│   └── ...
-├── static/                # Static assets
-│   └── img/
+│   ├── chapter-01/       # Foundations
+│   ├── chapter-02/       # Perception
+│   ├── chapter-03/       # Motion & Control
+│   ├── chapter-04/       # Learning
+│   ├── chapter-05/       # System Integration
+│   └── chapter-06/       # Future Directions
 ├── src/                   # Custom Docusaurus components
 │   ├── components/
-│   ├── css/
-│   └── pages/
+│   │   └── Chatbot/      # RAG chatbot UI
+│   ├── css/              # Cyberpunk theme
+│   ├── pages/            # Landing page
+│   └── theme/            # Theme customization
+├── static/                # Static assets
+│   └── img/
+│       └── book-cover.svg  # Cyberpunk book cover
+├── .specify/              # Spec-Kit Plus infrastructure
+├── specs/                 # Feature specifications
 ├── docusaurus.config.js   # Docusaurus configuration
 ├── sidebars.js            # Sidebar navigation
+├── DEPLOYMENT.md          # Deployment guide
+├── CHATBOT_SETUP.md       # Chatbot setup guide
+├── NEXT_STEPS.md          # Development roadmap
 └── package.json
 ```
 
@@ -171,12 +205,21 @@ Ways to contribute:
 
 [LICENSE TBD] – This work is free and accessible to all learners.
 
-## 🔗 Links
+## 🔗 Links & Documentation
 
 - **Live Site**: [https://YOUR_USERNAME.github.io/hack_book/](https://YOUR_USERNAME.github.io/hack_book/)
 - **GitHub Repository**: [https://github.com/YOUR_USERNAME/hack_book](https://github.com/YOUR_USERNAME/hack_book)
+
+**Documentation:**
+- [DEPLOYMENT.md](DEPLOYMENT.md) - Complete deployment guide
+- [CHATBOT_SETUP.md](CHATBOT_SETUP.md) - RAG chatbot setup
+- [NEXT_STEPS.md](NEXT_STEPS.md) - Development roadmap
+- [backend/README.md](backend/README.md) - Backend API docs
+
+**Technologies:**
 - **Spec-Kit Plus**: [https://github.com/panaversity/spec-kit-plus](https://github.com/panaversity/spec-kit-plus)
 - **Claude Code**: [https://www.claude.com/product/claude-code](https://www.claude.com/product/claude-code)
+- **Docusaurus**: [https://docusaurus.io/](https://docusaurus.io/)
 
 ## 📧 Contact
 

@@ -1,0 +1,36 @@
+{
+  "name": "hack_book",
+  "version": "1.0.0",
+  "description": "Physical AI & Humanoid Robotics Coursebook - An AI-driven technical book created with Docusaurus and Spec-Kit Plus",
+  "main": "index.js",
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "test:lint": "markdownlint-cli2 \"docs/**/*.md\" \"blog/**/*.md\"",
+    "test:links": "markdown-link-check docs/**/*.md",
+    "test:build": "npm run build",
+    "test:all": "npm run test:lint && npm run test:build"
+  },
+  "keywords": ["physical-ai", "robotics", "humanoid-robots", "embodied-intelligence", "coursebook", "docusaurus"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@axe-core/cli": "^4.11.0",
+    "markdown-link-check": "^3.14.2",
+    "markdownlint-cli2": "^0.19.1"
+  }
+}

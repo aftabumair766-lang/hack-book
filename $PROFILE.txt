@@ -1,0 +1,2 @@
+# Gemini API Key
+$env:GEMINI_API_KEY = "AIzaSyBk9A9smH_LCnxfe6mnA3ghP7gEJrg0Xwk"

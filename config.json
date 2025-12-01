@@ -1,0 +1,13 @@
+{
+  "Providers": [
+    {
+      "name": "gemini",
+      "api_base_url": "https://gemini.api.url/v1",
+      "api_key": "AIzaSyBxXph9-WjbPQHFDGQ--5JALfPd6V03JFM",
+      "models": ["google/gemini-1.5-flash"]
+    }
+  ],
+  "Router": {
+    "default": "gemini,google/gemini-1.5-flash"
+  }
+}

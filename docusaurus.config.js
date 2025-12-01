@@ -13,14 +13,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://YOUR_USERNAME.github.io',
+  url: 'https://aftabumair766-lang.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/hack_book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'YOUR_USERNAME', // Usually your GitHub org/user name.
+  organizationName: 'aftabumair766-lang', // Usually your GitHub org/user name.
   projectName: 'hack_book', // Usually your repo name.
 
   onBrokenLinks: 'warn',
@@ -43,7 +43,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/YOUR_USERNAME/hack_book/tree/main/',
+            'https://github.com/aftabumair766-lang/hack_book/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +53,7 @@ const config = {
           },
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/YOUR_USERNAME/hack_book/tree/main/',
+            'https://github.com/aftabumair766-lang/hack_book/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -86,7 +86,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/YOUR_USERNAME/hack_book',
+            href: 'https://github.com/aftabumair766-lang/hack_book',
             label: 'GitHub',
             position: 'right',
           },
@@ -113,7 +113,7 @@ const config = {
             items: [
               {
                 label: 'GitHub Discussions',
-                href: 'https://github.com/YOUR_USERNAME/hack_book/discussions',
+                href: 'https://github.com/aftabumair766-lang/hack_book/discussions',
               },
             ],
           },
@@ -126,7 +126,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/YOUR_USERNAME/hack_book',
+                href: 'https://github.com/aftabumair766-lang/hack_book',
               },
             ],
           },

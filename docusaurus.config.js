@@ -69,8 +69,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // Social card image for link previews
+      image: 'img/book-cover.png',
       navbar: {
         title: 'Physical AI Coursebook',
         logo: {

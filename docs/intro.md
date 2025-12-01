@@ -13,6 +13,20 @@ keywords:
 
 # Physical AI & Humanoid Robotics Coursebook
 
+<div style={{textAlign: 'center', margin: '2rem 0'}}>
+  <img
+    src="/hack_book/img/book-cover.svg"
+    alt="Physical AI & Humanoid Robotics - Futuristic book cover with glowing neon blue 3D text on dark cyberpunk background"
+    style={{
+      maxWidth: '800px',
+      width: '100%',
+      borderRadius: '12px',
+      boxShadow: '0 8px 32px rgba(0, 255, 255, 0.3)',
+      border: '2px solid rgba(0, 255, 255, 0.2)'
+    }}
+  />
+</div>
+
 Welcome to the **Physical AI & Humanoid Robotics Coursebook** – a comprehensive, AI-driven academic resource designed to teach the principles and practices of embodied intelligence, humanoid robotics, and physical AI systems.
 
 ## About This Coursebook

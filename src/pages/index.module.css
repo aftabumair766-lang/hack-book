@@ -1,0 +1,65 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+  color: white;
+}
+
+.logoContainer {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.bookCover {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookCover:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 48px rgba(0, 255, 255, 0.5);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.features h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #00bfff;
+}
+
+.features p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+
+  .bookCover {
+    max-width: 90%;
+  }
+}

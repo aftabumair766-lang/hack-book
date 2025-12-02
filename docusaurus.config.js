@@ -90,6 +90,10 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'custom-authNavbarItem',
+            position: 'right',
+          },
         ],
       },
       footer: {

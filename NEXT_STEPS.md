@@ -10,9 +10,16 @@ Your Physical AI & Humanoid Robotics coursebook is complete and ready! Here are 
 - Professional book cover (SVG)
 - Landing page with features
 - RAG chatbot implementation (backend + frontend)
+- **Authentication system (JWT-based signup/signin)** 🆕
+- **Background questionnaire (13 fields)** 🆕
+- **Personalized dashboard with recommendations** 🆕
+- **Chapter personalization engine (8+ transformations)** 🆕
+- **Translation system (7 languages: Urdu, Arabic, Spanish, French, German, Hindi, Chinese)** 🆕
+- **Permanent navbar authentication (Sign In/Sign Up always visible)** 🆕
 - Complete documentation
 
 ⏳ **Pending (Optional):**
+- Complete translation UI styling (styles.module.css for TranslateButton)
 - GitHub deployment
 - Backend services configuration (OpenAI, Qdrant, Neon)
 - Detailed content expansion

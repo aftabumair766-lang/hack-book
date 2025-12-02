@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 // Use localhost for development, can be configured via docusaurus.config.js customFields in production
 const API_BASE_URL = typeof window !== 'undefined' && window.location.hostname !== 'localhost'
-  ? 'https://your-backend-url.com'  // Replace with your production backend URL
+  ? null  // Backend not deployed yet - will show demo mode
   : 'http://localhost:8000';
 
 export default function Chatbot() {
@@ -69,6 +69,24 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
+      // Check if backend is available
+      if (!API_BASE_URL) {
+        // Demo mode - backend not deployed yet
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate delay
+
+        setMessages(prev => [...prev, {
+          type: 'bot',
+          content: `🤖 **Demo Mode Active**\n\nThe RAG chatbot backend is currently not deployed. This is a fully functional UI with the following features ready:\n\n✅ Complete chatbot interface\n✅ Selected text query support\n✅ FastAPI backend code (in /backend directory)\n✅ OpenAI + Qdrant + SQLite integration ready\n\n**Your question:** "${userMessage}"\n\n**To activate:**\n1. Deploy the backend from /backend directory\n2. Update API_BASE_URL in src/components/Chatbot/index.js\n3. Rebuild and redeploy\n\n📚 See CHATBOT_SETUP.md for full instructions.`,
+          timestamp: new Date()
+        }]);
+
+        setIsLoading(false);
+        if (selectedText) {
+          setSelectedText(null);
+        }
+        return;
+      }
+
       // Determine endpoint based on whether we have selected text
       const endpoint = selectedText
         ? `${API_BASE_URL}/api/chat/selected`
@@ -190,10 +208,21 @@ export default function Chatbot() {
             {messages.length === 0 && (
               <div className={styles.welcomeMessage}>
                 <p>👋 Welcome! I'm your AI assistant for this coursebook.</p>
-                <p>Ask me anything about Physical AI and Humanoid Robotics!</p>
-                <p className={styles.tip}>
-                  💡 Tip: Select any text on the page and ask me questions about it.
-                </p>
+                {!API_BASE_URL ? (
+                  <>
+                    <p>🤖 <strong>Demo Mode:</strong> The chatbot UI is fully functional, but the backend is not yet deployed.</p>
+                    <p className={styles.tip}>
+                      💡 Try asking a question to see the demo response and setup instructions!
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p>Ask me anything about Physical AI and Humanoid Robotics!</p>
+                    <p className={styles.tip}>
+                      💡 Tip: Select any text on the page and ask me questions about it.
+                    </p>
+                  </>
+                )}
               </div>
             )}
 

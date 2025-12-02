@@ -12,6 +12,10 @@ keywords:
   - embodied AI
 ---
 
+import TranslateButton from '@site/src/components/TranslateButton';
+
+<TranslateButton chapterId="chapter-02" />
+
 # Chapter 2: Artificial Intelligence in Physical Systems
 
 ## Introduction

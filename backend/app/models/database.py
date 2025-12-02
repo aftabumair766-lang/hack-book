@@ -70,3 +70,14 @@ def init_db(database_url: str):
     """Initialize database tables."""
     engine = get_engine(database_url)
     Base.metadata.create_all(bind=engine)
+
+
+def get_db():
+    """Dependency for getting database session."""
+    from app.core.config import settings
+    SessionLocal = get_session_maker(settings.DATABASE_URL)
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

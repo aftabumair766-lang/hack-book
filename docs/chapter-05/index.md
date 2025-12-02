@@ -12,6 +12,10 @@ keywords:
   - motion planning
 ---
 
+import TranslateButton from '@site/src/components/TranslateButton';
+
+<TranslateButton chapterId="chapter-05" />
+
 # Chapter 5: Manipulation and Dexterity
 
 ## Introduction

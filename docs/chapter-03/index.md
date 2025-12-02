@@ -12,6 +12,10 @@ keywords:
   - optimal control
 ---
 
+import TranslateButton from '@site/src/components/TranslateButton';
+
+<TranslateButton chapterId="chapter-03" />
+
 # Chapter 3: Control Systems for Humanoid Robots
 
 ## Introduction

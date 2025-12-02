@@ -12,6 +12,10 @@ keywords:
   - humanoid robots future
 ---
 
+import TranslateButton from '@site/src/components/TranslateButton';
+
+<TranslateButton chapterId="chapter-06" />
+
 # Chapter 6: Challenges and Future Directions
 
 ## Introduction

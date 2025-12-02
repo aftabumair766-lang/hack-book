@@ -12,6 +12,10 @@ keywords:
   - terrain adaptation
 ---
 
+import TranslateButton from '@site/src/components/TranslateButton';
+
+<TranslateButton chapterId="chapter-04" />
+
 # Chapter 4: Locomotion and Mobility
 
 ## Introduction

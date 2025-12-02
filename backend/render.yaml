@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: hack-book-chatbot
+    env: python
+    region: oregon
+    plan: free
+    branch: master
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: QDRANT_COLLECTION_NAME
+        value: hack_book_embeddings
+      - key: DATABASE_URL
+        value: sqlite:///./hack_book.db
+      - key: EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: LLM_MODEL
+        value: gpt-4-turbo-preview
+      - key: LLM_TEMPERATURE
+        value: "0.7"
+      - key: MAX_TOKENS
+        value: "2000"

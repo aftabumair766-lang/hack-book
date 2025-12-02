@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+// Use localhost for development, can be configured via docusaurus.config.js customFields in production
+const API_BASE_URL = typeof window !== 'undefined' && window.location.hostname !== 'localhost'
+  ? 'https://your-backend-url.com'  // Replace with your production backend URL
+  : 'http://localhost:8000';
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);

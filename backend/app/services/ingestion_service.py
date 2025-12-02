@@ -83,7 +83,7 @@ class IngestionService:
                         file_path=metadata.get('file_path', ''),
                         content_length=sum(len(c.text) for c in chunks),
                         chunk_count=len(chunks),
-                        metadata=metadata
+                        doc_metadata=metadata
                     )
 
                     if existing_doc:
@@ -92,7 +92,7 @@ class IngestionService:
                         existing_doc.chapter = metadata.get('chapter', '')
                         existing_doc.section = metadata.get('section', '')
                         existing_doc.chunk_count = len(chunks)
-                        existing_doc.metadata = metadata
+                        existing_doc.doc_metadata = metadata
                     else:
                         self.db_session.add(doc)
 
@@ -116,7 +116,7 @@ class IngestionService:
                                 chunk_index=chunk.chunk_index,
                                 chunk_text=chunk.text,
                                 chunk_size=len(chunk.text),
-                                metadata=chunk.metadata
+                                doc_metadata=chunk.metadata
                             )
                             self.db_session.merge(db_chunk)
                             stats["chunks_created"] += 1

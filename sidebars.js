@@ -20,7 +20,7 @@ const sidebars = {
       type: 'category',
       label: 'Chapter 1: Foundations',
       items: [
-        'chapter-01/chapter-01',
+        'chapter-01/index',
         'chapter-01/anatomy-structure',
         'chapter-01/sensors-actuators',
         'chapter-01/kinematics-dynamics',
@@ -30,27 +30,27 @@ const sidebars = {
     {
       type: 'category',
       label: 'Chapter 2: AI in Physical Systems',
-      items: ['chapter-02/chapter-02'],
+      items: ['chapter-02/index'],
     },
     {
       type: 'category',
       label: 'Chapter 3: Control Systems',
-      items: ['chapter-03/chapter-03'],
+      items: ['chapter-03/index'],
     },
     {
       type: 'category',
       label: 'Chapter 4: Locomotion',
-      items: ['chapter-04/chapter-04'],
+      items: ['chapter-04/index'],
     },
     {
       type: 'category',
       label: 'Chapter 5: Manipulation',
-      items: ['chapter-05/chapter-05'],
+      items: ['chapter-05/index'],
     },
     {
       type: 'category',
       label: 'Chapter 6: Future Directions',
-      items: ['chapter-06/chapter-06'],
+      items: ['chapter-06/index'],
     },
   ],
 };

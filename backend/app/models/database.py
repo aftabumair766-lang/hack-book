@@ -21,7 +21,7 @@ class Document(Base):
     file_path = Column(String(500), nullable=False)
     content_length = Column(Integer)
     chunk_count = Column(Integer)
-    metadata = Column(JSON)
+    doc_metadata = Column(JSON)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -51,7 +51,7 @@ class DocumentChunk(Base):
     chunk_index = Column(Integer, nullable=False)
     chunk_text = Column(Text, nullable=False)
     chunk_size = Column(Integer)
-    metadata = Column(JSON)
+    doc_metadata = Column(JSON)
     created_at = Column(DateTime, default=datetime.utcnow)
 
 

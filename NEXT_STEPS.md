@@ -1,4 +1,4 @@
-# 🎯 Next Steps for Your Coursebook
+.e# 🎯 Next Steps for Your Coursebook
 
 Your Physical AI & Humanoid Robotics coursebook is complete and ready! Here are your options for what to do next.
 

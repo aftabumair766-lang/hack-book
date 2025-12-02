@@ -1,0 +1,91 @@
+.chapterContainer {
+  position: relative;
+}
+
+.personalizedContent {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.03) 0%, rgba(0, 136, 255, 0.03) 100%);
+  border-left: 4px solid #00d9ff;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.originalContent {
+  /* Original content styling */
+}
+
+.profileSummary {
+  background: rgba(0, 217, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.profileSummary h3 {
+  color: #00ffff;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  color: #e0e0e0;
+}
+
+.profileGrid strong {
+  color: #00d9ff;
+  margin-right: 0.5rem;
+}
+
+.transformations {
+  background: rgba(0, 217, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 3px solid #00d9ff;
+}
+
+.transformations h4 {
+  color: #00d9ff;
+  margin: 0 0 1rem 0;
+}
+
+.transformations ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #888;
+}
+
+.transformations li {
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  background: var(--ifm-background-color);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.resetButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(136, 136, 136, 0.2);
+  color: #888;
+  border: 1px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.resetButton:hover {
+  background: rgba(136, 136, 136, 0.3);
+  border-color: #888;
+  color: #aaa;
+}

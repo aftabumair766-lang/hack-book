@@ -20,6 +20,7 @@ from app.models.schemas import (
 )
 from app.services.rag_service import RAGService
 from app.services.ingestion_service import IngestionService
+from app.routers import auth, personalization, translation
 
 
 # Database setup
@@ -65,6 +66,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include authentication router
+app.include_router(auth.router)
+
+# Include personalization router
+app.include_router(personalization.router)
+
+# Include translation router
+app.include_router(translation.router)
 
 
 @app.get("/", response_model=HealthResponse)

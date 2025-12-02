@@ -18,14 +18,23 @@
     "test:build": "npm run build",
     "test:all": "npm run test:lint && npm run test:build"
   },
-  "keywords": ["physical-ai", "robotics", "humanoid-robots", "embodied-intelligence", "coursebook", "docusaurus"],
+  "keywords": [
+    "physical-ai",
+    "robotics",
+    "humanoid-robots",
+    "embodied-intelligence",
+    "coursebook",
+    "docusaurus"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/preset-classic": "^3.9.2",
+    "better-auth": "^1.4.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@axe-core/cli": "^4.11.0",

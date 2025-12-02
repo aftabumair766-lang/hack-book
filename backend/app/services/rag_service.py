@@ -74,13 +74,18 @@ class RAGService:
             if vector is None:
                 vector = self.generate_embedding(text)
 
+            # Convert chunk_id string to UUID for Qdrant
+            # Use uuid5 to generate deterministic UUID from chunk_id
+            import hashlib
+            point_uuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, chunk_id))
+
             # Create point
             point = PointStruct(
-                id=chunk_id,
+                id=point_uuid,  # Use UUID instead of string
                 vector=vector,
                 payload={
                     "text": text,
-                    "chunk_id": chunk_id,
+                    "chunk_id": chunk_id,  # Keep original chunk_id in payload
                     **metadata
                 }
             )
@@ -119,17 +124,17 @@ class RAGService:
                     ]
                 )
 
-            # Search in Qdrant
-            search_results = self.qdrant_client.search(
+            # Search in Qdrant using query_points (new API)
+            query_response = self.qdrant_client.query_points(
                 collection_name=self.collection_name,
-                query_vector=query_vector,
+                query=query_vector,
                 limit=top_k,
                 query_filter=query_filter
             )
 
             # Convert to RetrievedChunk objects
             chunks = []
-            for result in search_results:
+            for result in query_response.points:
                 chunk = RetrievedChunk(
                     chunk_id=result.payload.get("chunk_id", ""),
                     content=result.payload.get("text", ""),
@@ -239,7 +244,7 @@ Guidelines:
         try:
             collection_info = self.qdrant_client.get_collection(self.collection_name)
             return {
-                "vectors_count": collection_info.vectors_count,
+                "vectors_count": collection_info.indexed_vectors_count,
                 "points_count": collection_info.points_count,
                 "status": collection_info.status
             }
